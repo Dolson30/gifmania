@@ -7,3 +7,33 @@
 {
     overflow: hidden;
 }
+page-header
+{
+     top:0;
+   width:100%;
+   height:60px; 
+   background:#6cf;
+   justify-content:center;
+}
+footer
+{
+   bottom:0;
+   width:100%;
+   height:60px; 
+   background:#58595b;
+   justify-content:center;
+
+}
+.myLink
+{
+    position: relative;
+    font-size:medium;
+    color:white;
+}
+.fa {
+
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}

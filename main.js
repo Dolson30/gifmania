@@ -122,5 +122,36 @@ function buttonGen()
         button.attr('term',buttonArray[i]);
         $("#search-buttons").append(button);
     }
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+    "thor" + "&api_key=BLI6XzY5uNIdxpVI8GGM4wJFZAyNm8gy&limit=10"; 
+    $.ajax
+    ({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) 
+        {
+          var results = response.data;
+          console.log(results);
+          $("#gifDiv").empty();
+            for (var i = 0; i < results.length; i++) 
+            {
+                console.log(results[i].rating);
+                var gifDiv = $("<div>");
+                gifDiv.addClass('col-sm-3 col-md-3 col-lg-3 gifBox');
+                var h3 = $("<p>").text("Rating: " + results[i].rating.toUpperCase());
+                var gifDisplay = $("<img>");
+                gifDisplay.attr("src", results[i].images.original_still.url);
+                gifDisplay.attr("data-animate",results[i].images.original.url);
+                gifDisplay.attr("data-still",results[i].images.original_still.url);
+                gifDisplay.addClass('gif');
+                gifDisplay.attr("data-animate",results[i].images.original.url);
+                gifDisplay.attr("data-state","still");
+                gifDiv.append(h3);
+                gifDiv.append(gifDisplay);
+                $("#gifDiv").append(gifDiv);
+
+            }
+        });
+
 }
 window.onload = buttonGen();
