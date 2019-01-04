@@ -7,12 +7,12 @@
 {
     overflow: hidden;
 }
-page-header
+header
 {
-     top:0;
+   top:0;
    width:100%;
    height:60px; 
-   background:#6cf;
+     background:#58595b;
    justify-content:center;
 }
 footer
@@ -36,4 +36,8 @@ footer
   width: 50px;
   text-align: center;
   text-decoration: none;
+}
+
+#confirm{
+    color:black;
 }
